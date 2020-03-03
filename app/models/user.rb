@@ -20,5 +20,6 @@ class User < ApplicationRecord
   def my_flights
     return Flight.where({ :passenger_id => self.id})
   end
+
   
 end
