@@ -16,4 +16,9 @@ class User < ApplicationRecord
   validates :phone_number, :presence => true
   
   has_secure_password
+
+  def my_flights
+    return Flight.where({ :passenger_id => self.id})
+  end
+  
 end

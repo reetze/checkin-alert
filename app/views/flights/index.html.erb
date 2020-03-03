@@ -16,26 +16,17 @@
 
     <form action="/insert_flight" method="post">
       <div class="form-group">
-        <label for="passenger_id_box">
-          Passenger
-        </label>
-
-        <input type="text" id="passenger_id_box" name="query_passenger_id" class="form-control">
+        <label for="passenger_id_box"></label>
+        <input type="hidden" id="passenger_id_box" name="query_passenger_id" class="form-control">
       </div>
 
       <div class="form-group">
-        <label for="description_box">
-          Description
-        </label>
-
+        <label for="description_box">Description</label>
         <input type="text" id="description_box" name="query_description" class="form-control">
       </div>
 
       <div class="form-group">
-        <label for="departs_at_box">
-          Departs at
-        </label>
-
+        <label for="departs_at_box">Departs at</label>
         <input type="datetime-local" id="departs_at_box" name="query_departs_at" class="form-control">
       </div>
 
@@ -57,32 +48,25 @@
   <div class="col-md-12">
     <table class="table">
       <tr>
-        <th>
-          ID
+        <th>ID
         </th>
 
-        <th>
-          Passenger
+        <th>Passenger
         </th>
 
-        <th>
-          Description
+        <th>Description
         </th>
 
-        <th>
-          Departs at
+        <th>Departs at
         </th>
 
-        <th>
-          Message sent
+        <th>Message sent
         </th>
 
-        <th>
-          Created at
+        <th>Created at
         </th>
 
-        <th>
-          Updated at
+        <th>Updated at
         </th>
 
         <th>
@@ -91,31 +75,24 @@
 
       <% @flights.each do |flight| %>
       <tr>
-        <td>
-          <%= flight.id %>
+        <td><%= flight.id %>
         </td>
 
-        <td>
-          <%= flight.passenger_id %>
+        <td><%= flight.passenger_id %>
         </td>
 
-        <td>
-          <%= flight.description %>
+        <td><%= flight.description %>
         </td>
 
-        <td>
-          <%= flight.departs_at %>
+        <td><%= flight.departs_at %>
         </td>
 
-        <td>
-          <%= flight.message_sent %>
+        <td><%= flight.message_sent %>
         </td>
 
-        <td>
-          <%= time_ago_in_words(flight.created_at) %> ago
+        <td><%= time_ago_in_words(flight.created_at) %> ago
         </td>
-        <td>
-          <%= time_ago_in_words(flight.updated_at) %> ago
+        <td><%= time_ago_in_words(flight.updated_at) %> ago
         </td>
 
         <td>
