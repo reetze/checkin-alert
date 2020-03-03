@@ -16,4 +16,8 @@ class Flight < ApplicationRecord
   validates :passenger_id, :presence => true
   validates :departs_at, :presence => true
 
+  def passenger
+    return User.where({ :id => self.passenger_id }).at(0)
+  end
+
 end
