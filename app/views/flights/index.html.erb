@@ -38,7 +38,7 @@
       <th></th>
     </tr>
 
-    <% @flights.each do |flight| %>
+    <% @future_flights.each do |flight| %>
     <tr>
       <td><%= flight.description %></td>
       <td><%= flight.departs_at %></td>
@@ -67,7 +67,7 @@
       <th></th>
     </tr>
 
-    <% @flights.each do |flight| %>
+    <% @past_flights.each do |flight| %>
     <tr>
       <td><%= flight.description %></td>
       <td><%= flight.departs_at %></td>
