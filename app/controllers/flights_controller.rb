@@ -1,6 +1,6 @@
 class FlightsController < ApplicationController
   def index
-    @flights = Flight.all.order({ :created_at => :desc })
+    @flights = @current_user.my_flights.order({ :created_at => :desc })
 
     render({ :template => "flights/index.html.erb" })
   end
@@ -14,7 +14,7 @@ class FlightsController < ApplicationController
 
   def create
     @flight = Flight.new
-    @flight.passenger_id = params.fetch("query_passenger_id")
+    @flight.passenger_id = @current_user.id
     @flight.description = params.fetch("query_description")
     @flight.departs_at = params.fetch("query_departs_at")
 
